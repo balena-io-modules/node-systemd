@@ -8,9 +8,9 @@ import {
 	powerOff,
 	reboot,
 	system,
-} from '../native/index.node';
+} from './systemd-bindings';
 
-export { system, SystemBus } from '../native/index.node';
+export { system, SystemBus } from './systemd-bindings';
 
 /**
  * Convenience method to return a singleton instance of the system bus.
