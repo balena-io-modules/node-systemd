@@ -15,7 +15,7 @@ inputs:
   # --- custom environment
   NODE_VERSION:
     description: 'Node.js version'
-    default: '18.x'
+    default: '20.x'
 
 runs:
   # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action

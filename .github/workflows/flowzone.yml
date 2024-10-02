@@ -57,3 +57,9 @@ jobs:
         linux/arm64,
         linux/amd64,
         linux/386
+      docker_runs_on: >
+        {
+          "linux/arm64": ["self-hosted","ARM64"],
+          "linux/arm/v6": ["self-hosted","ARM64"],
+          "linux/arm/v7": ["self-hosted","ARM64"]
+        }
