@@ -22,7 +22,7 @@ COPY src ./src
 
 # Install dependencies and build
 # bindings
-RUN npm install
+RUN npm install --no-progress --verbose
 
 # Create pre-gyp package
 RUN npx node-pre-gyp package
