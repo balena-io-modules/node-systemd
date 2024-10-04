@@ -4,7 +4,6 @@ This module provides some essential functions to interact with [systemd Manager]
 
 It uses Rust [zbus crate](https://crates.io/crates/zbus) to perform queries to the D-Bus socket and bind results to Node.js using [neon-bindings](https://neon-bindings.com/).
 
-
 This project has no goals of providing feature parity with the systemd API and new features will be added as-needed. PRs are welcome.
 
 This project was bootstrapped by [create-neon](https://www.npmjs.com/package/create-neon).
