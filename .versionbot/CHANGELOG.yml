@@ -1,4 +1,15 @@
 - commits:
+    - subject: Explicitly set GH_TOKEN permissions
+      hash: 17da74cdbde5e5f9e6a1ca90ebb5949c4bedd131
+      body: ""
+      footer:
+        change-type: patch
+      author: Anton Belodedenko
+      nested: []
+  version: 0.5.1
+  title: ""
+  date: 2024-11-18T20:29:25.502Z
+- commits:
     - subject: Publish binaries with node pre-gyp
       hash: 1bfbbe05e54c980cadd488f0fdfb64b8e7075763
       body: |
@@ -92,7 +103,8 @@
 
         they make more sense under the unit object, providing better UX
 
-        - Pass bus as a rust function argument: Previously, the bus was obtained using `this()` in rust, which would
+        - Pass bus as a rust function argument: Previously, the bus was obtained
+        using `this()` in rust, which would
 
         force calling methods to use `function.call`
       footer:
