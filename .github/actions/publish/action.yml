@@ -15,7 +15,7 @@ inputs:
   # --- custom environment
   NODE_VERSION:
     description: 'Node.js version'
-    default: '18.x'
+    default: '20.x'
 
 runs:
   # https://docs.github.com/en/actions/creating-actions/creating-a-composite-action
@@ -35,9 +35,11 @@ runs:
         username: ${{ github.actor }}
         password: ${{ fromJSON(inputs.secrets).GITHUB_TOKEN }}
 
-    - name: Get package version
+    - name: Get package version and platform
       shell: bash
-      run: echo "PKG_VERSION=v$(cat package.json | jq -r .version)" >> $GITHUB_ENV
+      run: |
+        echo "PKG_VERSION=v$(cat package.json | jq -r .version)" >> $GITHUB_ENV
+        echo "PLATFORM=$(echo "${{ env.matrix_value }}" | tr '/' '-' )" >> $GITHUB_ENV
 
     - name: Copy the binary from the built docker image
       shell: bash
@@ -56,13 +58,15 @@ runs:
         docker pull --platform "$PLATFORM" "${image}"
         docker create --name "${container}" "${image}"
         docker cp "${container}:/usr/src/app/build/stage/${PKG_VERSION}" "./${PKG_VERSION}"
+        ls -la "./${PKG_VERSION}"
+
       env:
         PLATFORM: ${{ env.matrix_value }}
         PKG_VERSION: ${{ env.PKG_VERSION }}
 
     - name: Upload artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08 # v4.6.0
       with:
-        name: gh-release-${{ github.event.pull_request.head.sha || github.event.head_commit.id }}
+        name: gh-release-${{ github.event.pull_request.head.sha || github.event.head_commit.id }}-${{ env.PLATFORM }}
         path: ${{ env.PKG_VERSION }}/*.tar.gz
         retention-days: 1
