@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update to Node 20
+      hash: 1d47ed81b55c782979d5c5a6d4d5504a8b7fbc0f
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Christina Ying Wang <christina@balena.io>
+        signed-off-by: Christina Ying Wang <christina@balena.io>
+      author: Christina Ying Wang
+      nested: []
+  version: 0.5.2
+  title: ""
+  date: 2025-02-07T20:47:24.037Z
+- commits:
     - subject: Explicitly set GH_TOKEN permissions
       hash: 17da74cdbde5e5f9e6a1ca90ebb5949c4bedd131
       body: ""
