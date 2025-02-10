@@ -3,6 +3,7 @@ import {
 	unitActiveState,
 	unitPartOf,
 	unitStart,
+	unitStartAndWait,
 	unitStop,
 	unitRestart,
 	powerOff,
@@ -85,6 +86,23 @@ export class Unit {
 	 */
 	async start(mode: JobMode = 'fail'): Promise<void> {
 		await unitStart(this.bus, this.name, mode);
+	}
+
+	/**
+	 * Starts a job and possibly dependent jobs and waits for a given number of seconds
+	 * for them to start successfully or fail.
+	 *
+	 *
+	 * From: https://www.freedesktop.org/wiki/Software/systemd/dbus/
+	 *
+	 * > The wait argument specifies the number of seconds to wait until deciding whether a job was started successfully or not.
+	 * > The mode needs to be one of replace, fail, isolate, ignore-dependencies, ignore-requirements. If "replace" the call will start the unit and its dependencies, possibly replacing already queued jobs that conflict with this. If "fail" the call will start the unit and its dependencies, but will fail if this would change an already queued job. If "isolate" the call will start the unit in question and terminate all units that aren't dependencies of it. If "ignore-dependencies" it will start a unit but ignore all its dependencies. If "ignore-requirements" it will start a unit but only ignore the requirement dependencies. It is not recommended to make use of the latter two options. Returns the newly created job object.
+	 *
+	 * Returns an object containing service active state, sub-state code and exec status,
+	 * e.g. `{ state: 'failed', code: 'failed', status: 26 }`
+	 */
+	async startAndWait(wait: number, mode: JobMode = 'fail'): Promise<object> {
+		return await unitStartAndWait(this.bus, this.name, wait, mode);
 	}
 
 	/**
