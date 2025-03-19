@@ -1,4 +1,17 @@
 - commits:
+    - subject: Pin actions/setup-node action to 1a4442c
+      hash: 2a7d88a6a28e3d1332dfe4d7d03962c5fe72dae3
+      body: |
+        Update actions/setup-node
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.4
+  title: ""
+  date: 2025-03-19T17:09:54.966Z
+- commits:
     - subject: Update actions/upload-artifact action to v4.6.1
       hash: 02db0b301d96b163b863c2a8659e04eaffdfd7c9
       body: |
