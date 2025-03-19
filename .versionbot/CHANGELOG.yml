@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update ghcr.io/balena-os/mock-systemd-bus Docker tag to v0.2.3
+      hash: cd84d03fb5075d3cd3f88c2b5406d507d4079a5f
+      body: |
+        Update ghcr.io/balena-os/mock-systemd-bus from 0.2.0 to 0.2.3
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.5
+  title: ""
+  date: 2025-03-19T18:07:01.095Z
+- commits:
     - subject: Pin actions/setup-node action to 1a4442c
       hash: 2a7d88a6a28e3d1332dfe4d7d03962c5fe72dae3
       body: |
