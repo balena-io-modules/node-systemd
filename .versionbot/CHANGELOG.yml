@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update actions/upload-artifact action to v4.6.1
+      hash: 02db0b301d96b163b863c2a8659e04eaffdfd7c9
+      body: |
+        Update actions/upload-artifact from 4.6.0 to 4.6.1
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.3
+  title: ""
+  date: 2025-03-19T16:15:44.054Z
+- commits:
     - subject: Update to Node 20
       hash: 1d47ed81b55c782979d5c5a6d4d5504a8b7fbc0f
       body: ""
