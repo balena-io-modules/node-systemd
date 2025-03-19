@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update actions/upload-artifact action to v4.6.2
+      hash: aa7a93437074fdf1ed986ec32303b555b3063898
+      body: |
+        Update actions/upload-artifact from 4.6.1 to 4.6.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.6
+  title: ""
+  date: 2025-03-19T19:09:17.168Z
+- commits:
     - subject: Update ghcr.io/balena-os/mock-systemd-bus Docker tag to v0.2.3
       hash: cd84d03fb5075d3cd3f88c2b5406d507d4079a5f
       body: |
