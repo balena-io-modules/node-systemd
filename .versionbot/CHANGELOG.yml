@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency mocha to v11
+      hash: 3eb46a4b7c99997c7ec9a33d8b62f67044e65fdb
+      body: |
+        Update mocha from 10.8.2 to 11.1.0
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.8
+  title: ""
+  date: 2025-04-02T14:07:22.765Z
+- commits:
     - subject: Update docker/login-action action to v3.4.0
       hash: bc9929b499f41857178876ec89d990bc45ce5cb9
       body: |
