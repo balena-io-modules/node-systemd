@@ -4,11 +4,11 @@
 # - test the build of the project in a musl containerized environment
 # - provide an install to run integration tests
 # -	generate a binary to be published with the package to be used by node-pre-gyp
-FROM alpine:3.20
+FROM alpine:3.21
 
 RUN apk add --update --no-cache \
 		build-base \
-		nodejs~=20 \
+		nodejs \
 		npm \
 		dbus \
 		rust cargo \
