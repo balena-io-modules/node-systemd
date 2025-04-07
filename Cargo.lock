@@ -151,7 +151,7 @@ dependencies = [
 
 [[package]]
 name = "balena-systemd"
-version = "0.5.8"
+version = "0.5.9"
 dependencies = [
  "neon",
  "once_cell",

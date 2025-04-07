@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update Rust crate tokio to v1.38.2 [SECURITY]
+      hash: 99a940d0c7182302e6657ab89fd90510f7f76cea
+      body: |
+        Update tokio from 1.29.1 to 1.38.2
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.9
+  title: ""
+  date: 2025-04-07T23:25:16.914Z
+- commits:
     - subject: Update dependency mocha to v11
       hash: 3eb46a4b7c99997c7ec9a33d8b62f67044e65fdb
       body: |
