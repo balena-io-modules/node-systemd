@@ -28,7 +28,6 @@ RUN npm install
 RUN npx node-pre-gyp package
 
 COPY lib ./lib
-COPY typings ./typings
 COPY tests ./tests
 COPY ./wait-for-it.sh /
 
