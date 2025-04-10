@@ -1,4 +1,17 @@
 - commits:
+    - subject: Update dependency @balena/lint to v8
+      hash: e65ae8d3a8fdf7514cba332e99e933ade1451959
+      body: |
+        Update @balena/lint from 7.3.0 to 8.2.8
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: balena-renovate[bot]
+      nested: []
+  version: 0.5.10
+  title: ""
+  date: 2025-04-10T15:22:52.625Z
+- commits:
     - subject: Update Rust crate tokio to v1.38.2 [SECURITY]
       hash: 99a940d0c7182302e6657ab89fd90510f7f76cea
       body: |
