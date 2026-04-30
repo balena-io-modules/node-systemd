@@ -1,8 +1,8 @@
+use futures_util::TryFutureExt;
 use neon::prelude::*;
 use once_cell::sync::OnceCell;
 use tokio::runtime::Runtime;
-use zbus::dbus_proxy;
-use zbus::export::futures_util::TryFutureExt;
+use zbus::proxy;
 use zbus::Connection;
 
 // Return a global tokio runtime or create one if it doesn't exist.
@@ -13,44 +13,44 @@ fn runtime<'a, C: Context<'a>>(cx: &mut C) -> NeonResult<&'static Runtime> {
     RUNTIME.get_or_try_init(|| Runtime::new().or_else(|err| cx.throw_error(err.to_string())))
 }
 
-#[dbus_proxy(
+#[proxy(
     interface = "org.freedesktop.systemd1.Manager",
     default_service = "org.freedesktop.systemd1",
     default_path = "/org/freedesktop/systemd1"
 )]
 pub trait ServiceManager {
-    #[dbus_proxy(object = "Unit")]
+    #[zbus(object = "Unit")]
     fn get_unit(&self, unit: &str) -> zbus::Result<Unit>;
 
-    #[dbus_proxy(object = "Job")]
+    #[zbus(object = "Job")]
     fn start_unit(&self, unit: &str, mode: &str) -> zbus::Result<Job>;
 
-    #[dbus_proxy(object = "Job")]
+    #[zbus(object = "Job")]
     fn stop_unit(&self, unit: &str, mode: &str) -> zbus::Result<Job>;
 
-    #[dbus_proxy(object = "Job")]
+    #[zbus(object = "Job")]
     fn restart_unit(&self, unit: &str, mode: &str) -> zbus::Result<Job>;
 }
 
-#[dbus_proxy(
+#[proxy(
     default_service = "org.freedesktop.systemd1",
     interface = "org.freedesktop.systemd1.Job"
 )]
 pub trait Job {}
 
-#[dbus_proxy(
+#[proxy(
     default_service = "org.freedesktop.systemd1",
     interface = "org.freedesktop.systemd1.Unit"
 )]
 pub trait Unit {
-    #[dbus_proxy(property)]
+    #[zbus(property)]
     fn active_state(&mut self) -> zbus::Result<String>;
 
-    #[dbus_proxy(property)]
+    #[zbus(property)]
     fn part_of(&mut self) -> zbus::Result<Vec<String>>;
 }
 
-#[dbus_proxy(
+#[proxy(
     interface = "org.freedesktop.login1.Manager",
     default_service = "org.freedesktop.login1",
     default_path = "/org/freedesktop/login1"
