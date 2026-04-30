@@ -17,8 +17,8 @@ describe('ServiceManager', () => {
 			// main thread?
 			await expect(
 				Promise.all([
-					await manager.getUnit('dummy.service').activeState,
-					await manager.getUnit('dummy.service').activeState,
+					manager.getUnit('dummy.service').activeState,
+					manager.getUnit('dummy.service').activeState,
 				]),
 			).to.not.be.rejected;
 		});

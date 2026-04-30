@@ -1,13 +1,16 @@
 {
 	"compilerOptions": {
-		"module": "commonjs",
+		"rootDir": "./",
 		"outDir": "build",
 		"noUnusedParameters": true,
 		"noUnusedLocals": true,
 		"removeComments": true,
 		"sourceMap": true,
 		"strict": true,
-		"target": "es2015",
+		"target": "es2025",
+		"module": "commonjs",
+		"esModuleInterop": true,
+		"types": ["node", "mocha"],
 		"declaration": true,
 		"skipLibCheck": true
 	},
