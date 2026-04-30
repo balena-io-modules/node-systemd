@@ -1,5 +1,5 @@
+import type { SystemBus } from '../native/index.node';
 import {
-	SystemBus,
 	unitActiveState,
 	unitPartOf,
 	unitStart,
@@ -21,9 +21,7 @@ export { system, SystemBus } from '../native/index.node';
 export const singleton = (() => {
 	let bus: SystemBus | null = null;
 	return async function () {
-		if (!bus) {
-			bus = await system();
-		}
+		bus ??= await system();
 		return bus;
 	};
 })();
