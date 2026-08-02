@@ -2,7 +2,7 @@ version: '2.3'
 services:
   # This provides the testing systemd interface
   mock-systemd:
-    image: ghcr.io/balena-os/mock-systemd-bus:0.2.3
+    image: ghcr.io/balena-os/mock-systemd-bus:0.2.3@sha256:ead8ff4b1f8533eef7078346ad38e149a8159f7de600f8d8df6ac28889368a62
     privileged: true
     volumes:
       - dbus:/shared/dbus
